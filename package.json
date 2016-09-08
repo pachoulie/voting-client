@@ -22,11 +22,13 @@
   "dependencies": {
     "immutable": "^3.8.1",
     "react": "^15.3.1",
+    "react-addons-pure-render-mixin": "^15.3.1",
+    "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "webpack-dev-server --hot --inline",
+    "build": "webpack",
     "eject": "react-scripts eject",
     "test": "mocha --compilers js:babel-core/register --require ./test/testHelper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch"
@@ -46,11 +48,5 @@
   "bugs": {
     "url": "https://github.com/pachoulie/voting-client/issues"
   },
-  "homepage": "https://github.com/pachoulie/voting-client#readme",
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
-  }
+  "homepage": "https://github.com/pachoulie/voting-client#readme"
 }
