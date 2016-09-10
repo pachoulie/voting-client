@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default React.createClass({
-    getPairs: function() {
+    getPair: function() {
         return this.props.pair || [];
     },
     getVotes: function(entry) {
@@ -11,7 +11,7 @@ export default React.createClass({
     },
     render: function() {
         return <div className="tally">
-            {this.getPairs().map(entry =>
+            {this.getPair().map(entry =>
                 <div key={entry} className="entry">
                     <h1>{entry}</h1>
                     <div className="voteCount">
