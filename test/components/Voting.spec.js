@@ -6,7 +6,7 @@ import {
     Simulate
 } from 'react-addons-test-utils';
 import { List } from 'immutable';
-import Voting from '../../src/components/Voting';
+import { Voting } from '../../src/components/Voting';
 import { expect } from 'chai';
 
 describe('Voting', () => {
@@ -22,7 +22,7 @@ describe('Voting', () => {
     });
 
     it('invokes callback when a button is clicked', () => {
-        let votedWith;
+        let votedWith = '';
         const vote = (entry) => votedWith = entry;
 
         const component = renderIntoDocument(

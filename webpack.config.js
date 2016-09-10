@@ -6,6 +6,12 @@ module.exports = {
         'webpack/hot/only-dev-server',
         './src/index.jsx'
     ],
+    output: {
+        path: __dirname + '/dist',
+        publicPath: '/',
+        filename: 'bundle.js'
+    },
+    devtool: 'cheap-module-eval-source-map',
     module: {
       loaders: [
           {
@@ -21,11 +27,6 @@ module.exports = {
     },
     resolve: {
       extensions: ['', '.js', '.jsx']
-    },
-    output: {
-        path: __dirname + '/dist',
-        publicPath: '/',
-        filename: 'bundle.js'
     },
     devServer: {
         contentBase: './dist',
