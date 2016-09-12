@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
     entry: [
@@ -21,7 +22,13 @@ module.exports = {
           },
           {
               test: /\.css$/,
-              loader: 'style!css!postcss?browsers=last 2 versions'
+              loader: 'style!css?modules',
+              include: /flexboxgrid/,
+          },
+          {
+              test: /\.css$/,
+              loader: 'style!css!postcss?browsers=last 2 versions',
+              exclude: /flexboxgrid/
           }
       ]
     },

@@ -2,7 +2,7 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
 import Winner from './Winner';
-import Vote from './Vote';
+import Vote from './Vote/Vote';
 import * as actionCreators from '../actionCreators';
 
 export class Voting extends React.Component {
