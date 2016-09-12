@@ -3,10 +3,10 @@ import PureRenderMixins from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
 import Winner from './Winner';
 import Vote from './Vote';
-import * as actionCreatores from '../actionCreators';
+import * as actionCreators from '../actionCreators';
 
 export const Voting = React.createClass({
-    mixins: PureRenderMixins,
+    mixins: [PureRenderMixins],
     render: function () {
         return <div>
             {this.props.winner ?
@@ -27,5 +27,5 @@ function mapStateToProps(state) {
 
 export const VotingContainer = connect(
     mapStateToProps,
-    actionCreatores
+    actionCreators
 )(Voting);

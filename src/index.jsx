@@ -10,7 +10,7 @@ import { setState } from './actionCreators';
 import removeActionMiddleware from './remoteAction.middleware';
 import App from './App';
 import { VotingContainer } from './components/Voting';
-import { Results } from './components/Results';
+import { ResultsContainer } from './components/Results';
 import './index.css';
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`);
@@ -24,7 +24,7 @@ const createStoreWithMiddleware = applyMiddleware(
 const store = createStoreWithMiddleware(reducer, Map());
 
 const routes = <Route component={App}>
-    <Route path="/results" component={Results}/>
+    <Route path="/results" component={ResultsContainer}/>
     <Route path="/" component={VotingContainer}/>
 </Route>;
 
