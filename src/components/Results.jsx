@@ -5,21 +5,27 @@ import Winner from './Winner';
 import Tally from './Tally';
 import * as actionCreators from '../actionCreators';
 
-export const Results = React.createClass({
-    mixins: [PureRenderMixin],
-    render: function () {
-        return this.props.winner ?
-            <Winner ref="winner" winner={this.props.winner}/> :
-            <div className="results">
-                <Tally {...this.props}/>
-                <div className="management">
-                    <button ref="next" className="next" onClick={this.props.next}>
-                        Next
-                    </button>
-                </div>
-            </div>;
+export class Results extends React.Component {
+    constructor(props) {
+        super(props);
+        this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
     }
-});
+
+    render() {
+        return (
+            this.props.winner ?
+                <Winner ref="winner" winner={this.props.winner}/> :
+                <div className="results">
+                    <Tally {...this.props}/>
+                    <div className="management">
+                        <button ref="next" className="next" onClick={this.props.next}>
+                            Next
+                        </button>
+                    </div>
+                </div>
+        );
+    }
+}
 
 function mapStateToProps(state) {
     return {
