@@ -2,11 +2,16 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import RaisedButton from 'material-ui/RaisedButton';
 import { Grid, Row, Col } from 'react-flexbox-grid/lib/index';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 export default class Vote extends React.Component {
     constructor(props) {
         super(props);
         this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
+    }
+
+    getChildContext() {
+        return {muiTheme: getMuiTheme()};
     }
 
     getPair() {
@@ -39,3 +44,7 @@ export default class Vote extends React.Component {
         );
     }
 }
+
+Vote.childContextTypes = {
+    muiTheme: React.PropTypes.object.isRequired,
+};
