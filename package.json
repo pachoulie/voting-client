@@ -40,7 +40,7 @@
     "start": "webpack-dev-server --hot --inline",
     "build": "webpack",
     "eject": "react-scripts eject",
-    "test": "mocha --compilers js:babel-core/register --require ./test/testHelper.js \"test/**/*@(.js|.jsx)\"",
+    "test": "mocha --compilers css:./test/misc/nullCompiler,js:babel-core/register --require ./test/testHelper.js \"test/**/*@(.js|.jsx)\"",
     "test:watch": "npm run test -- --watch"
   },
   "eslintConfig": {

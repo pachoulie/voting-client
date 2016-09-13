@@ -23,11 +23,12 @@ module.exports = {
           {
               test: /\.css$/,
               loader: 'style!css?modules',
-              include: /flexboxgrid/,
+              include: /flexboxgrid/
           },
           {
               test: /\.css$/,
               loader: 'style!css!postcss?browsers=last 2 versions',
+              include: path.join(__dirname, 'node_modules'),
               exclude: /flexboxgrid/
           }
       ]
