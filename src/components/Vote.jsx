@@ -4,6 +4,12 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { Grid, Row, Col } from 'react-flexbox-grid/lib/index';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
+const styles = {
+    button: {
+        height: 300
+    }
+};
+
 export default class Vote extends React.Component {
     constructor(props) {
         super(props);
@@ -31,11 +37,12 @@ export default class Vote extends React.Component {
             <Grid className="voting">
                 <Row>
                     {this.getPair().map(entry =>
-                        <Col xs={6} key={entry}>
+                        <Col xs={6} key={entry} className="button">
                             <RaisedButton label={this.getLabel(entry)}
                                           fullWidth={true}
                                           onClick={() => this.props.vote(entry)}
-                                          disabled={this.isDisabled()}>
+                                          disabled={this.isDisabled()}
+                                          style={styles.button}>
                             </RaisedButton>
                         </Col>
                     )}

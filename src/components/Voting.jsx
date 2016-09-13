@@ -1,9 +1,16 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import { connect } from 'react-redux';
+import { Card } from 'material-ui/Card';
 import Winner from './Winner';
 import Vote from './Vote';
 import * as actionCreators from '../actionCreators';
+
+const style = {
+    Card: {
+        padding: '14px 24px 24px'
+    }
+};
 
 export class Voting extends React.Component {
     constructor(props) {
@@ -13,11 +20,13 @@ export class Voting extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.props.winner ?
-                    <Winner ref="winner" winner={this.props.winner}/> :
-                    <Vote {...this.props}/>
-                }
+            <div className="VoteContainer">
+                <Card style={style.Card}>
+                    {this.props.winner ?
+                        <Winner ref="winner" winner={this.props.winner}/> :
+                        <Vote {...this.props}/>
+                    }
+                </Card>
             </div>
         );
     }
